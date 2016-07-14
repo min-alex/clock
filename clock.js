@@ -42,19 +42,19 @@ $(document).ready(function() {
 
 		meriSpan = document.getElementById('meridien')
 		meriSpan.innerText = meridien
-	}
 
-	function changeBackground() {
-		var col1 = String(Math.floor(Math.random()*256))
-		var col2 = String(Math.floor(Math.random()*256))
-		var col3 = String(Math.floor(Math.random()*256))
-		var newCol = "rgb("+col1+", "+col2+", "+col3+")"
 
-		document.body.style.backgroundColor = newCol
+		if (minutes%5 == 0 && seconds == 0) {
+			var col1 = String(Math.floor(Math.random()*256))
+			var col2 = String(Math.floor(Math.random()*256))
+			var col3 = String(Math.floor(Math.random()*256))
+			var newCol = "rgb("+col1+", "+col2+", "+col3+")"
+			
+			document.body.style.backgroundColor = newCol
+		}
 	}
 	
 	setInterval(displayTime,1000);
-	setInterval(changeBackground, 300000)
 });
 
 
